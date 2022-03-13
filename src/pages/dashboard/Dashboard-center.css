@@ -1,0 +1,135 @@
+/* ----------------- Navbar --------------------- */
+
+.nav-item {
+  margin-left: 1em;
+  margin-bottom: 2em;
+  color: white;
+}
+
+.nav-icons {
+  /* margin-left: 1em; */
+  font-size: 2rem;
+  color: white;
+  padding-right: 12px;
+}
+
+.dashboard-btn {
+  /* text-decoration: none; */
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 15px 10px 15px;
+  text-align: center;
+  color: white;
+  background: #0b2159;
+  box-shadow: 1px 1px 20px rgba(24, 255, 255, 0.5);
+  border-radius: 15px;
+  transition: 200ms;
+  width: auto;
+}
+
+.profile-dashboard {
+  font-size: 14px;
+}
+
+.dashboard-btn:hover {
+    color: #ffffff;
+    background: #010031;
+}
+.dashboard-btn:active {
+    color: #ffffff;
+    background: #010031;
+}
+
+.navbar-score {
+  margin-right: 2em;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.nav-icons:hover {
+  padding-right: 12px;  transform: scale(1.2);
+}
+
+/* ----------------- Profile --------------------- */
+
+.user {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.profile-pic {
+  flex: 1;
+  padding-left: 10em;
+}
+
+.img-border {
+  border: 5px solid rgba(24, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.user-pic {
+  width: 5em;
+}
+
+.user-details {
+  color: #c8cada;
+  flex: 2;
+}
+
+.team-link {
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  padding: 15px 20px 15px 20px;
+  text-align: center;
+  color: rgba(24, 255, 255, 0.8);
+  background: #010031;
+  box-shadow: 1px 1px 20px rgba(24, 255, 255, 0.5);
+  border-radius: 15px;
+  transition: 200ms;
+}
+
+.team-link:hover {
+  color: #18ffff;
+}
+
+/* ----------------- Cards --------------------- */
+
+.cards-section {
+  margin: 1em;
+}
+
+.card {
+  border-radius: 2em;
+  box-shadow: rgb(34, 34, 34) 0px -1px 2px 2px;
+  margin-top: 7em;
+  margin-bottom: 1em;
+}
+
+.card-img {
+  z-index: 2;
+  position: relative;
+  top: -2em;
+  width: 4rem;
+  transform: rotate3d(1, 2, 3, 10deg);
+}
+
+.card-body {
+  color: #c8cada;
+  padding-left: 30px;
+padding-right: 30px;
+}
+
+
+
+
+
