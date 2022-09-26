@@ -130,60 +130,69 @@ function Login(props) {
           </div>
         </div>
       </div> */}
-        <div className="container reg-form">
-      <h1 className="reg-heading">Login</h1>
-      <div className="card">
-      
-              <Form onSubmit={handleLogin} ref={form}>
-  
-                <>
+      <div className="container reg-form">
+        <h1 className="reg-heading">Login</h1>
+        <div className="card">
 
-                <div className='email'>
-                  <div className="reg-inp">
-                    <label htmlFor="email">Email</label> 
-                    <br />
-                    <Input
-                  type="text"
-                  // className="form-control"
-                  name="email"
-                  value={email}
-                  onChange={onChangeEmail}
-                  validations={[required]}
-                />
-                  </div>
+          <Form onSubmit={handleLogin} ref={form}>
+
+            <>
+
+              <div className='email'>
+                <div className="reg-inp">
+                  <label htmlFor="email">Email</label>
+                  <br />
+                  <Input
+                    type="text"
+                    // className="form-control"
+                    name="email"
+                    value={email}
+                    onChange={onChangeEmail}
+                    validations={[required]}
+                  />
                 </div>
-
-              
-
-                <div className='password'>
-                  <div className="reg-inp">
-                    <label htmlFor="password">Password</label> 
-                    <br />
-                    <Input
-                  type="password"
-                  // className="form-control"
-                  name="password"
-                  value={password}
-                  onChange={onChangePassword}
-                  validations={[required]}
-                />
-                  </div>
-                </div>
-
-                <button className="signup-button">Login</button>
-                </>
-              
-              {message && (
-            <div className="form-group">
-              <div className="alert alert-danger" role="alert">
-                {message}
               </div>
-            </div>
-          )}
-          <CheckButton style={{ display: "none" }} ref={checkBtn} />
-              </Form>
-      </div>
-      {/* <Stars></Stars> */}
+
+
+
+              <div className='password'>
+                <div className="reg-inp">
+                  <label htmlFor="password">Password</label>
+                  <br />
+                  <Input
+                    type="password"
+                    // className="form-control"
+                    name="password"
+                    value={password}
+                    onChange={onChangePassword}
+                    validations={[required]}
+                  />
+                </div>
+              </div>
+
+              <button className="signup-button">Login</button>
+            </>
+
+            {message && (
+              <div className="form-group">
+                {
+                  message.email &&
+                  <div className="alert alert-danger" role="alert">
+                    {message.email}
+                  </div>
+                }
+                {
+                  message.password &&
+                  <div className="alert alert-danger" role="alert">
+                    {message.password}
+                  </div>
+                }
+              </div>
+            )}
+            <CheckButton style={{ display: "none" }} ref={checkBtn} />
+          </Form>
+        </div>
+        {/* <Stars></Stars> */}
       </div>
     </>
   );

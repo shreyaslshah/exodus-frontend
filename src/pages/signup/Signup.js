@@ -90,8 +90,8 @@ function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [college,setCollege] = useState("");
-  const [phoneno,setPhoneno] = useState(0);
+  const [college, setCollege] = useState("");
+  const [phoneno, setPhoneno] = useState(0);
   const [successful, setSuccessful] = useState(false);
 
   const { message } = useSelector(state => state.message);
@@ -130,7 +130,7 @@ function Signup() {
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      dispatch(register(name, email, password,college,phoneno))
+      dispatch(register(name, email, password, college, phoneno))
         .then(() => {
           setSuccessful(true);
         })
@@ -265,106 +265,121 @@ function Signup() {
       </div> */}
       {/* <Nav/> */}
       <div className="container reg-form">
-      <h1 className="reg-heading">Register</h1>
-      <div className="card">
-      
-              <Form onSubmit={handleRegister} ref={form}>
-              {!successful && (
-                <>
-              <div className='email'>
+        <h1 className="reg-heading">Register</h1>
+        <div className="card">
+
+          <Form onSubmit={handleRegister} ref={form}>
+            {!successful && (
+              <>
+                <div className='email'>
                   <div className="reg-inp">
-                    <label htmlFor="name">Name</label> 
+                    <label htmlFor="name">Name</label>
                     <br />
                     <Input
-                  type="text"
-                  // className="form-control"
-                  name="name"
-                  value={name}
-                  onChange={onChangeName}
-                  validations={[required]}
-                />
+                      type="text"
+                      // className="form-control"
+                      name="name"
+                      value={name}
+                      onChange={onChangeName}
+                      validations={[required]}
+                    />
                   </div>
                 </div>
 
                 <div className='email'>
                   <div className="reg-inp">
-                    <label htmlFor="email">Email</label> 
+                    <label htmlFor="email">Email</label>
                     <br />
                     <Input
-                  type="text"
-                  // className="form-control"
-                  name="email"
-                  value={email}
-                  onChange={onChangeEmail}
-                  validations={[required, validEmail]}
-                />
+                      type="text"
+                      // className="form-control"
+                      name="email"
+                      value={email}
+                      onChange={onChangeEmail}
+                      validations={[required, validEmail]}
+                    />
                   </div>
                 </div>
 
                 <div className='college'>
                   <div className="reg-inp">
-                    <label htmlFor="college">College</label> 
+                    <label htmlFor="college">College</label>
                     <br />
                     <Input
-                  type="text"
-                  // className="form-control"
-                  name="college"
-                  value={college}
-                  onChange={onChangeCollege}
-                  validations={[required]}
-                />
+                      type="text"
+                      // className="form-control"
+                      name="college"
+                      value={college}
+                      onChange={onChangeCollege}
+                      validations={[required]}
+                    />
                   </div>
                 </div>
 
                 <div className='phoneno'>
                   <div className="reg-inp">
-                    <label htmlFor="phoneno">Mobile No</label> 
+                    <label htmlFor="phoneno">Mobile No</label>
                     <br />
                     <Input
-                  type="number"
-                  // className="form-control"
-                  name="phoneno"
-                  value={phoneno}
-                  onChange={onChangePhoneno}
-                  validations={[required]}
-                />
+                      type="number"
+                      // className="form-control"
+                      name="phoneno"
+                      value={phoneno}
+                      onChange={onChangePhoneno}
+                      validations={[required]}
+                    />
                   </div>
                 </div>
 
                 <div className='password'>
                   <div className="reg-inp">
-                    <label htmlFor="password">Password</label> 
+                    <label htmlFor="password">Password</label>
                     <br />
                     <Input
-                  type="password"
-                  // className="form-control"
-                  name="password"
-                  value={password}
-                  onChange={onChangePassword}
-                  validations={[required, vpassword]}
-                />
+                      type="password"
+                      // className="form-control"
+                      name="password"
+                      value={password}
+                      onChange={onChangePassword}
+                      validations={[required, vpassword]}
+                    />
                   </div>
                 </div>
 
                 <button className="signup-button">Register</button>
-                </>
-              )}
-              {successful &&(
-                <div >
-                 <p className="verify-email">Verification Email Sent</p>
-                </div>
-              )}
-              {message && (
-            <div className="form-group">
-              <div className={ successful ? "alert alert-success" : "alert alert-danger" } role="alert">
-                {message}
+              </>
+            )}
+            {successful && (
+              <div >
+                <p className="verify-email">Verification Email Sent</p>
               </div>
-            </div>
-          )}
-          <CheckButton style={{ display: "none" }} ref={checkBtn} />
-              </Form>
-      </div>
-      {/* <Stars></Stars> */}
+            )}
+            {message && (
+              <div className="form-group">
+                {
+                  message.email &&
+                  <div className={successful ? "alert alert-success" : "alert alert-danger"} role="alert">
+                    {message.email}
+                  </div>
+                }
+                {
+                  message.name &&
+                  <div className={successful ? "alert alert-success" : "alert alert-danger"} role="alert">
+                    {message.name}
+                  </div>
+                }
+                {
+                  message.password &&
+                  <div className={successful ? "alert alert-success" : "alert alert-danger"} role="alert">
+                    {message.password}
+                  </div>
+                }
+              </div>
+            )}
+            <CheckButton style={{ display: "none" }} ref={checkBtn} />
+          </Form>
+        </div>
+        {/* <Stars></Stars> */}
       </div>
     </>
   );
